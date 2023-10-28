@@ -1,167 +1,91 @@
----
-output:
-  pdf_document: default
-  html_document: default
----
-JASA Reproducibility Materials Template
-================
-
-This GitHub repository contains a suggested template structure for authors who
-submit to JASA (either Applications and Case Studies or Theory and
-Methods) to include materials to reproduce analyses, visualizations, and
-tables.
-
-We provide this template as a default structure that we (the JASA Associate Editors of Reproducibility) think could be
-useful for many projects, either as is or with modifications by authors.
-However, the template is intended to be helpful and is by no means
-required of authors. Authors should consult [our reproducibility
-guide](https://jasa-acs.github.io/repro-guide) for details on what is
-required of reproducibility materials submitted with JASA revisions (not
-required upon initial submission).
-
-## Why is a template repository useful?
-
-The purpose of this template repository is to provide a mechanism for
-author(s) to share their materials via a Git repository, hosted on a
-cloud-based repository manager such as GitHub or GitLab. This provides
-the following advantages for author(s):
-
-1.  Analyses (including code, narrative text, output, plots, etc) can be
-    version controlled (or branched or forked) allowing original
-    author(s) to continue to develop the analyses or other data analysts
-    to build off the analyses. Also iterations and changes to the
-    analysis are then available via the Git commit history.
-2.  Materials are easily available to other researchers.
-3.  Preparing a repository also makes it easy for the JASA Associate
-    Editors for Reproducibility to copy the materials for a JASA article
-    into the JASA GitHub repository where the final paper products are stored
-    after publication (https://github.com/jasa-acs).
-
-## How does the process work?
-
-### Step 1
-
-Author(s) can create a public GitHub repository in their own GitHub account
-by using this template repository. This template contains a basic 
-skeletal structure to help authors structure their code and analyses for their 
-JASA publication. Creating a repository with the template can be done in the following way: 
-
-Click on the "Use this template" button for [this GitHub template repository](https://github.com/jasa-acs/repro-template). (You'll need to be signed in to a GitHub account in order to see the button.)
-
-![Click template button](https://docs.github.com/assets/cb-36544/images/help/repository/use-this-template-button.png)
-
-From there, author(s) can [follow these instructions](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template). However do not optionally select "**Include all branches**" as you do not need this for your own projects. 
 
 
-### Step 2
+# Modeling Microbial Community Coalescence via Compositional Directed Acyclic Graphical Models
 
-The author(s) can then directly edit (or replace) the manuscript template files in their own GitHub repository. Author(s) can also add their own data, code, and other files as needed. 
+# Author Contributions Checklist Form
 
-For guidance on getting started with git, we recommend the [Happy with git r](https://happygitwithr.com) tutorials.
+## Data
 
-**Importantly, the authors should provide an overview of how to carry
-out the analyses presented in their manuscript in the `README.md` of their
-repository, replacing the content in this file.** This overview would
-generally refer to scripts/code files that execute the analyses and are
-placed either in the main directory or the `/code` subdirectory. The
-*Workflow* section of the ACC form should refer to this README.md as
-containing the instructions for how to reproduce the analyses.
+### Abstract 
+Our data source consists of measurements of the background gamma-ray spectrum that were
+collected from June to December of 2012 at the University of Texas J.J. Pickle Research
+Campus (hereafter, PRC). The measurements were taken with a cesium-iodide scintillator
+detector hooked up to a GPS unit and driven around campus in a golf cart. This enabled us to
+characterize the background radiation over a wide spatial area.
 
-### Step 3
+### Availability 
+Yes, the data to replicate our results is available (we have included it with the submission).
 
-Author(s) use `git commit` to track changes over time and use `git push`
-to push changes to a repository on the author(s) personal GitHub
-account.
+### Description 
 
-### Step 4
+The data set contains five files.
 
-Author(s) submit a link to their GitHub repository as part of the [JASA
-Reproducibility review process](https://jasa-acs.github.io/repro-guide/),
-required upon submission of an invited revision.
+- The global background spectrum for the University of Texas Pickle Research Campus (PRC)
+(“background_train_mean.csv”).
+- The measured spectra of cesium and cobalt from the our laboratory experiments (“ 2013 -
+cs137-5cm.csv” and “co60-4min-320cps-c7-20cm.csv” respectively).
+- The raw data for the anomaly-detection experiment on real data: training and testing data
+(“training_data.csv”, “testing_data.csv”).
 
-### Step 5
+#### Permissions 
+The data was originally collected by the authors.
 
-JASA Associate Editors for Reproducibility will review the materials in
-the GitHub repository of the authors and submit a
-reproducibility review as part of the standard JASA review process.
-Authors have the opportunity to respond to the review by making changes
-and pushing their changes to their personal GitHub repository.
+#### Licensing information
+Creative Commons CC0 (see full license at https://wiki.creativecommons.org/wiki/Data).
 
-### Step 6
+#### Link to data
+github.com/
 
-Once the manuscript is accepted, the materials in the author(s) personal
-GitHub repository will be copied to the [JASA repository](https://github.com/jasa-acs).
+#### Data provenance, including identifier or link to original data if different than above
 
-## Reproducibility materials file structure
+Collected from June-December 2012 by the authors at the University of Texas Pickle Research
+Campus.
 
-This template provides a suggested file structure for a JASA submission, but authors are free
-to modify this structure.
+#### File format
+csv
 
-The suggested components are as follows. Directories in the submission may have subdirectories to
-further organize the materials.
+#### Metadata 
+The data is in different matrix files, where for each matrix each column represents a photon
+measurement channel.
 
-1.  A `README.md` file - This file gives a short description of the
-    paper and an overview of how to carry out the analyses presented in their manuscript.
-2.  A `manuscript` directory - This directory will generally hold the source files
-    (often LaTeX or Rmd) for the manuscript and any files directly related to the
-    generation of the manuscript, including figure files.
-3.  A `data` directory - This directory will generally hold the real data files 
-    (or facsimile versions of them in place of confidential data) and simulated data files.
-    See `data/README.md` for more details. 
-4.  A `code` directory - This directory will generally hold 
-    source code files that contain the core code to implement the method and various utility/auxiliary functions.
-5.  An `output` directory - This directory will generally hold objects derived
-    from computations, including results of simulations or real data analyses. See `output/README.md` for more details.
+#### Version information
+1.
 
-## Guidance on the use of reproducible environments
+## Code
 
-Submissions may include the use of reproducible environments capturing
-state of a machine generating manuscript artifacts and even the
-manuscript itself. Here we discuss two types of reproducible
-environments and their use. Both virtual and package environments may be
-put in the `code` directory.
+### Abstract 
+The code provided includes all the scripts necessary to replicate all the experiments in the
+paper, for both real and simulated data.
 
-### Package environments
+### Description 
+How delivered (R package, Shiny app, etc.)
+The code to reproduce the experiments consists of R scripts.
 
-Package environments capture the set of packages used by a programming
-language needed to generate output. The R programming language has
-`renv`, `switchr` and others to accomplish this, Python has `venv`,
-`conda` and others, and Julia has native support (through the `Pkg`
-package). When submitting these types of environments, the following are
-suggested.
+### Licensing information
 
-1.  Clearly indicate (in the overall `README.md`) the language(s) used (including version) 
-    and the package environment tool used (e.g., `renv`, `conda`).
-2.  Use a single package environment for all reproducible content.
-3.  Prefer packages from package archives (CRAN, Bioconductor,
-    RForge.net for example).
-4.  If you use packages from a code repository (GitHub, GitLab, etc.)
-    then use a release version if possible, or indicate the commit used. You could also consider
-    forking the repository and providing a release.
+The code is licensed under the terms of the MIT license
 
-### Virtual environments
+## Instructions for Use
 
-Virtual environments such as Docker and Singlarity capture
-the entire computing environment in which computations were performed.
-In general, they are a more robust solution, capable of taking a
-“snapshot” of a machine, including any system-level utilities and
-external libraries needed to perform your computations. They have the
-advantage that reproducing materials means running the virtual
-environment, rather than recreating the programming language environment.
-If using a virtual environment, we ask that 
-you provide a definition file (e.g., a Dockerfile) or (perhaps better)
-a link to an image in a standard online registry, such as DockerHub.
+### Reproducibility 
+What is to be reproduced (e.g., "All tables and figure from paper", "Tables 1-4”, etc.)
+"All tables and figure from paper", Tables 1- 3 , Figures 1- 8.
 
-## References
+How to reproduce analyses (e.g., workflow information, makefile, wrapper scripts)
 
-Gentleman, Robert, and Duncan Temple Lang. “[Statistical Analyses and
-Reproducible
-Research](http://biostats.bepress.com/cgi/viewcontent.cgi?article=1001&context=bioconductor).”
-(2004).
-
-Gentleman, Robert. “[Reproducible research: a bioinformatics case
-study](https://www.degruyter.com/document/doi/10.2202/1544-6115.1034/html).”
-Statistical applications in genetics and molecular biology 4.1 (2005).
-
-Marwick, Ben, and Bryan, Jennifer, and Attali, Dean, and Hollister,
-Jeffrey W. [rrrpkg Github Page](https://github.com/ropensci/rrrpkg).
+- Table 1 run: “Paper_Table1.R”
+- Table 2 in the paper can be obtained by first running
+“Paper_generate_radition_ground_truth.R”, here one needs to specify the parameters of the
+anomaly. Then run: “Paper_simulated_radition.R” to obtain comparisons between different
+methods.
+- Table 3 can be obtained using the script: “Paper_small_anomaly.R”.
+- Figure 1- 2 can be reproduce by generating the desired pre and post change densities using
+“generate_radiation_ground_truth.R”, and then (for Figure 1 ) using code from “Paper_Var_L.R
+and “Paper_simulated_radition.R”(for Figure 2).
+- Figure 3: requires the data available in the “Paper_Simulated_example” folder and can be
+plotted with “Paper_Table1.R”.
+- Figure 4-6: can be obtained by generating the desired pre and post change densities using
+“generate_radiation_ground_truth.R”.
+- Figure 7 can be reproduced running “Paper_Var_L.R”.
+- Figure 8: requires the testing data and can be plotted after running the script
+“Paper_small_real_anomaly.R”.
