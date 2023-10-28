@@ -1,5 +1,5 @@
-Please replace the contents of this file with relevant instructions for your repository or remove this file entirely.
+This directory contains two stan files to conduct Bayesian posterior sampling.
 
-This directory would generally contain source code files that contain the core code to implement the method and various utility/auxiliary functions.
-
-Scripts/code files that execute the overall workflow to carry out an analysis and generate results for the manuscript might be placed in the main directory.
+* coalescence.stan: stan file to conduct posterior sampling for causal direction $y_1 \rightarrow y_2$ ot $y_2 \rightarrow y_1$.
+* nocausal.stan: stan file to conduct posterior sampling if there is no causal relationship between $y_1$ and $y_2$.
+* compDAG.R :R file to conduct compDAG method.
