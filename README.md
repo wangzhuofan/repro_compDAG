@@ -25,7 +25,7 @@ The two datasets are provided in the directory /*data* and are respectively incl
 
 ### Abstract
 
-The code provided includes the main code to conduct the compDAG method
+The code provided includes the main code to conduct the compDAG method.
 
 ### Description
 
