@@ -1,0 +1,12 @@
+Warning message:
+In eval(ei, envir) : 强制改变过程中产生了NA
+Additive 0.5 100 NA 
+This is loo version 2.6.0
+- Online documentation and vignettes at mc-stan.org/loo
+- As of v2.0.0 loo defaults to 1 core but we recommend using as many as possible. Use the 'cores' argument or set options(mc.cores = NUM_CORES) for an entire session. 
+载入需要的程辑包：foreach
+载入需要的程辑包：iterators
+载入需要的程辑包：parallel
+载入需要的程辑包：StanHeaders
+
+停止执行

@@ -1,0 +1,29 @@
+Warning message:
+In eval(ei, envir) : 强制改变过程中产生了NA
+Additive 1 100 NA 
+This is loo version 2.6.0
+- Online documentation and vignettes at mc-stan.org/loo
+- As of v2.0.0 loo defaults to 1 core but we recommend using as many as possible. Use the 'cores' argument or set options(mc.cores = NUM_CORES) for an entire session. 
+载入需要的程辑包：foreach
+载入需要的程辑包：iterators
+载入需要的程辑包：parallel
+载入需要的程辑包：StanHeaders
+
+rstan version 2.26.23 (Stan version 2.26.1)
+
+For execution on a local, multicore CPU with excess RAM we recommend calling
+options(mc.cores = parallel::detectCores()).
+To avoid recompilation of unchanged Stan programs, we recommend calling
+rstan_options(auto_write = TRUE)
+For within-chain threading using `reduce_sum()` or `map_rect()` Stan functions,
+change `threads_per_chain` option:
+rstan_options(threads_per_chain = 1)
+
+载入需要的程辑包：randomForest
+randomForest 4.7-1.1
+Type rfNews() to see new features/changes/bug fixes.
+载入需要的程辑包：RColorBrewer
+Error in makePSOCKcluster(names = spec, ...) : 
+  numeric 'names' must be >= 1
+Calls: makeCluster -> makePSOCKcluster
+停止执行
