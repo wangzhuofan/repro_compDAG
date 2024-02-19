@@ -6,11 +6,12 @@ compute_implied_fdr <- function(threshold, s) {
   indicator = (s>threshold)
   if(sum(indicator)==0)
     return(0)
-  return(sum((1-s)*indicator)/sum(indicator))
+  pip = (s - min(s))/diff(range(s))
+  return(sum((1-pip)*indicator)/sum(indicator))
 }
 
 search_threshold <- function(s,fdr){
-  for (threshold in seq(0,1,0.01)){
+  for (threshold in seq(0,1,0.005)){
     if(compute_implied_fdr(threshold,s)<fdr)
       break
   }
@@ -66,7 +67,7 @@ computeAccuracy = function(noisetype,allSignal,allMethod,allN){
   return(mergeAccuracy)
 }
 
-computeMetrics = function(noisetype,allSignal,method,allN){
+computeMetrics = function(noisetype,allSignal,method,allN,threshold){
   mergeMean = matrix(0,3,0)
   mergeSD = matrix(0,3,0)
   for (signal in allSignal) {
@@ -88,7 +89,7 @@ computeMetrics = function(noisetype,allSignal,method,allN){
       # if(method=="compDAG"){
       
       # thres = lapply(result,function(x){search_threshold(x$mEst,0.1)})
-      result = lapply(result, function(x){return(x$mEst>(search_threshold(x$mEst,0.1)))})
+      result = lapply(result, function(x){return(x$mEst>threshold)})
       # }
       set.seed(1)
       # n = 100; px = 30; py = 40;signal = 5
@@ -167,11 +168,13 @@ for(noisetype in allNoisetype){
 allMethod = c("compDAG","PC")#
 allN = c(150,100)
 allSignal =c(0.3,0.5,1,3,5)
-
+threshold = 0.16
 for(noisetype in allNoisetype){
   for (method in allMethod) {
-    finalList = computeMetrics(noisetype,allSignal,method,allN)
-    outputMetricsTable(finalList$finalMean, finalList$finalSD, method, rk = 3)
+    for (thres in threshold) {
+      finalList = computeMetrics(noisetype,allSignal,method,allN,thres)
+      outputMetricsTable(finalList$finalMean, finalList$finalSD, method, rk = 3)
+    }
   }
 }
 
