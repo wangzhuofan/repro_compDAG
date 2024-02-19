@@ -42,12 +42,10 @@ We provided the results of intermediate output in the directory */output* to avo
 
 How to reproduce analyses (e.g., workflow information, makefile, wrapper scripts)
 
-- Table 1 run: “table1_code.R”
-- Table 2 run: “table2_code.R”
-- Table 3 run: “table3_code.R”
-- Table 4 run: “table4_code.R”
+- Table 1-4 and Table S.2-5 run: “table1-4_S.2-5_code.R”
 - Table 5 run: “table5_code.R”
 - Table 6 run: “table6_code.R”
 - Table S.1 run: “tableS1_code.R”
-- Figure 1 run: “figure1_code.R”
-- Figure 2 run: “figure2_code.R”
+- Figure 1-2 and Figure S.1-2 run: “figure1-2_S.1-2_code.R”
+- Figure 3 run: “figure3_code.R”
+- Figure 4 run: “figure4_code.R”

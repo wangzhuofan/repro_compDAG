@@ -24,7 +24,7 @@ result = foreach(i=1:nRepli,.packages = c("rstan","gtools","loo","quantregForest
       y = data$y
     }
     if(method == "compDAG"){
-      res = compDAG(x,y,0.1)
+      res = compDAG(x,y,0.1,0.1)
     }
     if(method == "COLP"){
       asw <- numeric(5)

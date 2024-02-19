@@ -1,6 +1,6 @@
 This directory contains simulated data files and real data files for the project compDAG.
-* generate_simulated_data.R: R file to generate simualted datasets according to the proposed compDAG moel. You can adjust $n$ and $signal$ (which correspond to sample size $n$ and signal $\pi_{21}$ in paper) in code to change data generating settings.
-* generate_misspecified_data.R: R file to generate simualted datasets according to the linear structural equation moel (misspecified model). You can adjust $n$ and $signal$ (which correspond to sample size $n$ and signal $\pi_{21}$ in paper) in code to change data generating settings.
+* 01generate_simulated_data.R: R file to generate simualted datasets according to the proposed compDAG moel. You can adjust $n$ and $signal$ (which correspond to sample size $n$ and signal $\pi_{21}$ in paper) in code to change data generating settings.
+* 01generate_misspecified_data.R: R file to generate simualted datasets according to the linear structural equation moel (misspecified model). You can adjust $n$ and $signal$ (which correspond to sample size $n$ and signal $\pi_{21}$ in paper) in code to change data generating settings.
 * realdata_aml/rawdata/Genus.csv: CSV file which contains the raw data for oral_and_stool real data application. Rows represent taxon while Columns represent samples (including samples from oral or stool).
 * realdata_aml/rawdata/metadata.csv: CSV file which contains the meta data for oral_and_stool real data application. It provides information for samples, including patient, timepoint, material (from oral or stool).
 * realdata_aml/preprocessed_aml_data.RData: RData file which contains the preprocessed AML data.
