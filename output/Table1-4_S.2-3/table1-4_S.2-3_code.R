@@ -144,11 +144,11 @@ outputMetricsTable = function(finalMean, finalSD, method, rk = 3){
   }# rowI
 }
 
-#------ Accuracy Table ------
+#------ Accuracy Table (Table 1-2) ------
 # allMethod = c("VI")
 allMethod = c("compDAG","COLP","bQCD" ,"PC")#
 # allMethod = c("COLP","bQCD" ,"PC")
-allN = c(150,100)
+allN = c(100,150)
 allSignal =c(0.3,0.5,1,3,5)
 allNoisetype = c("Dirichlet","Additive")
 # allNoisetype = c("Dirichlet")
@@ -163,12 +163,12 @@ for(noisetype in allNoisetype){
   outputAccuracyTable(finalList, rk = 3)
 }
 
-#------ Metrics Table ------
+#------ Metrics Table(Table 3-4) ------
 # allMethod = c("VI")
 allMethod = c("compDAG","PC")#
-allN = c(150,100)
+allN = c(100,150)
 allSignal =c(0.3,0.5,1,3,5)
-threshold = c(0.06,0.1,0.16)
+threshold = c(0.1)
 for(noisetype in allNoisetype){
   for (method in allMethod) {
     for (thres in threshold) {
@@ -178,6 +178,37 @@ for(noisetype in allNoisetype){
   }
 }
 
+#------ Metrics Table(Table S.2,S.3) ------
+# allMethod = c("VI")
+outputMetricsTable_supp = function(finalMean, finalSD, method, rk = 3,thres){
+  cat("\\midrule\n")
+  colNum = 1+length(allN)*length(allSignal)
+  for(rowI in 1:3){
+    if(rowI==1) cat("\\multirow{5}{*}{\\tabincell{c}{", method,"\\\\(threshold = ",thres,")}}&TPR",sep="")
+    if(rowI==2) cat("&FDR")
+    if(rowI==3) cat("&MCC")
+    
+    for(colJ in 1:(colNum-1)){
+      cat(" & \\tabincell{c}{")
+      fmt = paste0("%.",rk,"f")
+      cat(sprintf(fmt,finalMean[rowI,colJ]))
+      cat("\\\\(",sprintf(fmt,finalSD[rowI,colJ]),")}", sep="")
+    }
+    cat("\\\\", "\n")
+  }# rowI
+}
+allMethod = c("compDAG")#
+allN = c(100,150)
+allSignal =c(0.3,0.5,1,3,5)
+threshold = c(0.06,0.16)
+for(noisetype in allNoisetype){
+  for (method in allMethod) {
+    for (thres in threshold) {
+      finalList = computeMetrics(noisetype,allSignal,method,allN,thres)
+      outputMetricsTable_supp(finalList$finalMean, finalList$finalSD, method, rk = 3,thres)
+    }
+  }
+}
 
 
 

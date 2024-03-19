@@ -29,8 +29,13 @@ The code provided includes the main code to conduct the compDAG method.
 
 ### Description
 
-* *coalescence.stan* and *nocausal.stan* are stan files to conduct posterior sampling.
-* *compDAG.R* is the R file to conduct the compDAG method.
+* 02-1coalescence.stan: stan file to conduct posterior sampling for causal direction $y_1 \rightarrow y_2$ ot $y_2 \rightarrow y_1$.
+* 02-2nocausal.stan: stan file to conduct posterior sampling if there is no causal relationship between $y_1$ and $y_2$.
+* 02compDAG.R :R file to conduct compDAG method.
+* 00load_all.E : R file to load all the required packages and functions.
+* 03bQCD.R: R file to conduct bQCD method.
+* main.R: R file to conduct simulation studies in the paper.
+* PARAMS.R R file to read parameter settings from bash file.
 
 ## Instructions for Use
 
@@ -42,7 +47,7 @@ We provided the results of intermediate output in the directory */output* to avo
 
 How to reproduce analyses (e.g., workflow information, makefile, wrapper scripts)
 
-- Table 1-4 and Table S.2-5 run: “table1-4_S.2-5_code.R”
+- Table 1-4 and Table S.2-3 run: “table1-4_S.2-3_code.R”
 - Table 5 run: “table5_code.R”
 - Table 6 run: “table6_code.R”
 - Table S.1 run: “tableS1_code.R”

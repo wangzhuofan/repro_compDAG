@@ -1,5 +1,5 @@
 rm(list = ls())
 load("./data/realdata_aml/preprocessed_aml_data.RData")
 source("./code/00load_all.R")
-amlResult = compDAG(stool_scale,oral_scale,0.1)
+amlResult = compDAG(stool_scale,oral_scale,0.1,0.1)
 save(amlResult,file = "./output/realdata_results/AML_results.RData")
