@@ -6,7 +6,7 @@
 # nCluster = 8
 # nRepli = 8
 # method = "compDAG"
-# 
+#
 args <- commandArgs(trailingOnly = TRUE)
 noise.type = (args[1])
 simu_px = as.numeric(args[2])
@@ -16,3 +16,10 @@ signal = as.numeric(args[5])
 nCluster = as.numeric(args[6])
 nRepli = as.numeric(args[7])
 method = args[8]
+rparam = as.numeric(args[9])
+pgammaa = as.numeric(args[10])
+pgammab = as.numeric(args[11])
+pdir = as.numeric(args[12])
+prop = as.numeric(args[13])
+param_verbose = as.numeric(args[14])
+hyper_verbose = as.numeric(args[15])
